@@ -4,4 +4,12 @@
 
 
 usethis::create_github_token()
-usethis::edit_r_environ()
+usethis::edit_r_environ() ## Linux
+gitcreds::gitcreds_set() ## macOS o winOS
+
+## Configura tu usuario de GitHub
+usethis::edit_git_config()
+
+
+## Queremos usar git con nuestro Rproj
+usethis::use_git()
