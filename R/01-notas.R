@@ -13,3 +13,6 @@ usethis::edit_git_config()
 
 ## Queremos usar git con nuestro Rproj
 usethis::use_git()
+
+## Para conectar tu repositorio local de Git con los servidores de GitHub
+usethis::use_github()
