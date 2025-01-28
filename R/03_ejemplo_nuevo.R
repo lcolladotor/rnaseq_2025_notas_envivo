@@ -1,6 +1,6 @@
 library("sessioninfo")
 
-## Reproducibility information
+## Información de reproducibilidad
 print("Reproducibility information:")
 Sys.time()
 proc.time()
