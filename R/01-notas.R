@@ -16,3 +16,6 @@ usethis::use_git()
 
 ## Para conectar tu repositorio local de Git con los servidores de GitHub
 usethis::use_github()
+
+## Ejemplo con Roman
+print("Hola Roman!")
