@@ -1,5 +1,6 @@
 ## ----first_rse------------------------------------------------
 ## Lets build our first SummarizedExperiment object
+## Estamos construyendo nuestro primer objeto de tipo SummarizedExperiment
 library("SummarizedExperiment")
 ## ?SummarizedExperiment
 
