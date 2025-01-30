@@ -15,8 +15,17 @@ set.seed(20210223)
 counts <- matrix(runif(nrows * ncols, 1, 1e4), nrows)
 ## Información de nuestros genes
 rowRanges <- GRanges(
-    rep(c("chr1", "chr2"), c(50, 150)),
-    IRanges(floor(runif(200, 1e5, 1e6)), width = 100),
+    seqnames = rep(c("chr1", "chr2"), c(50, 150)),
+    ranges = IRanges(
+        start = floor(
+            runif(
+                n = 200,
+                min = 1e5,
+                max = 1e6
+            )
+        ),
+        width = 100
+    ),
     strand = sample(c("+", "-"), 200, TRUE),
     feature_id = sprintf("ID%03d", 1:200)
 )
