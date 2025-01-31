@@ -44,6 +44,14 @@ sampleData
 cbind(mat2, sampleData)
 colnames(mat2)
 
+## ----EMM_example1_interactive, eval = FALSE-------------------
+# ## Usaremos shiny otra ves
+app <- ExploreModelMatrix::ExploreModelMatrix(
+    sampleData = sampleData,
+    designFormula = ~genotype + treatment
+)
+if (interactive()) shiny::runApp(app)
+
 ## Ejemplo 2
 (
     sampleData <- data.frame(
@@ -98,14 +106,6 @@ mat3 <- with(
 mat3
 
 colnames(mat3)
-
-## ----EMM_example1_interactive, eval = FALSE-------------------
-# ## Usaremos shiny otra ves
-app <- ExploreModelMatrix::ExploreModelMatrix(
-    sampleData = sampleData,
-    designFormula = ~genotype + treatment
-)
-if (interactive()) shiny::runApp(app)
 
 ## Ejemplo 3
 (
