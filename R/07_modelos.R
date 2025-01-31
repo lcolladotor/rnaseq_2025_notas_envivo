@@ -1,11 +1,19 @@
 ## ----model.matrix---------------------------------------------
 ## ?model.matrix
-mat <- with(trees, model.matrix(log(Volume) ~ log(Height) + log(Girth)))
+mat <- with(
+    trees,
+    model.matrix(log(Volume) ~ log(Height) + log(Girth))
+)
 mat
 colnames(mat)
 
 ## ----lm_example-----------------------------------------------
-summary(lm(log(Volume) ~ log(Height) + log(Girth), data = trees))
+summary(
+    lm(
+        log(Volume) ~ log(Height) + log(Girth),
+        data = trees
+    )
+)
 
 ## ----EMM_example1---------------------------------------------
 ## Datos de ejemplo
@@ -26,13 +34,23 @@ vd <- ExploreModelMatrix::VisualizeDesign(
 ## Veamos las imágenes
 cowplot::plot_grid(plotlist = vd$plotlist)
 
+mat2 <- with(
+    sampleData,
+    model.matrix(~genotype + treatment)
+)
+mat2
+sampleData
+
+cbind(mat2, sampleData)
+colnames(mat2)
+
 ## ----EMM_example1_interactive, eval = FALSE-------------------
 # ## Usaremos shiny otra ves
-# app <- ExploreModelMatrix(
-#     sampleData = sampleData,
-#     designFormula = ~ genotype + treatment
-# )
-# if (interactive()) shiny::runApp(app)
+app <- ExploreModelMatrix::ExploreModelMatrix(
+    sampleData = sampleData,
+    designFormula = ~genotype + treatment
+)
+if (interactive()) shiny::runApp(app)
 
 ## ----download_SRP045638---------------------------------------
 library("recount3")
