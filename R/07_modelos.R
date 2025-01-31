@@ -138,6 +138,12 @@ vd <- VisualizeDesign(
 )
 cowplot::plot_grid(plotlist = vd$plotlist, ncol = 1)
 
+app <- ExploreModelMatrix::ExploreModelMatrix(
+    sampleData = sampleData,
+    designFormula = ~0 + batch + condition
+)
+if (interactive()) shiny::runApp(app)
+
 ## ----download_SRP045638---------------------------------------
 library("recount3")
 
@@ -313,7 +319,7 @@ pheatmap(
     exprs_heatmap,
     cluster_rows = TRUE,
     cluster_cols = TRUE,
-    show_rownames = FALSE,
+    show_rownames = TRUE,
     show_colnames = FALSE,
     annotation_col = df
 )
